@@ -7,7 +7,7 @@
     var request = new XMLHttpRequest(),
         query = 'http://query.yahooapis.com/v1/public/yql?q=' +
                 'select * from rss ' +
-                'where url="http://www.dailymail.co.uk/home/index.rss" ' +
+                'where url="http://www.dailymail.co.uk/news/index.rss" ' +
                 'limit 1' + 
                 '&format=json';
     request.open('GET', query, true);
