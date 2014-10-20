@@ -24,7 +24,8 @@
         articleUrl = article.link.trim();
 
         hEl = document.createElement('h1');
-        hEl.innerHTML = headline;
+        hEl.innerHTML =
+          '<span>'+ headline.split('').join('</span><span>') + '</span>';
         pEl = document.createElement('p');
         pEl.innerHTML = description;
         aEl = document.createElement('a');
@@ -37,18 +38,33 @@
         body.appendChild(pEl);
         body.appendChild(aEl);
 
+        dancingLights();
       } else {
         document.querySelector('body')
           .innerHTML = 'The YQL server returned an error';
       }
     };
-
     request.onerror = function() {
       document.querySelector('body')
         .innerHTML = 'There was an error performing the YQL request';
     };
 
     request.send();
+  };
+
+
+  var dancingLights = function dancingLights() {
+    var i = 0,
+        ele = document.querySelector('h1');
+
+    setInterval(function() {
+      ele.children[i].className = 'highlight';
+
+      var x = i;
+      setTimeout(function() { ele.children[x].className = ''; }, 800);
+
+      i = ++i % headline.length;
+    }, 100);
   };
 
   queryMailHeadline();
