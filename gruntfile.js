@@ -19,13 +19,7 @@ module.exports = function(grunt) {
     },
 
     connect: {
-      keepalive: {
-        options: {
-          keepalive: true,
-          livereload: true
-        }
-      },
-      moveon: {
+      serve: {
         options: {
           livereload: true
         }
@@ -33,19 +27,23 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      project: {
+      livereload: {
         files: '*',
         tasks: 'jshint',
         options: {
           livereload: true
         }
+      },
+      noreload: {
+        files: '*',
+        tasks: 'jshint'
       }
     }
   });
 
-  grunt.registerTask('jshintServe', 'Start server',
-      ['connect:moveOn', 'watch']);
+  grunt.registerTask('livereload', 'Start server',
+      ['connect', 'watch:livereload']);
 
   grunt.registerTask('default', 'Start server',
-      ['connect:keepalive']);
+      ['connect', 'watch:noreload']);
 };
