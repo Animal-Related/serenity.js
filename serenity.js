@@ -29,16 +29,27 @@
         hEl = document.createElement('h1');
         hEl.innerHTML =
           '<span>'+ headline.split('').join('</span><span>') + '</span>';
+        hEl.className = 'hidden';
+
         aEl = document.createElement('a');
         aEl.innerHTML = 'Find more misery here...';
         aEl.href = articleUrl;
+        aEl.className = 'hidden';
 
         body = document.querySelector('article');
         body.innerHTML = '';
         body.appendChild(hEl);
         body.appendChild(aEl);
 
-        dancingLights();
+        // Race condition. Without the timeout we remove the class before the
+        // elements are rendered on the page, preventing the transition
+        setTimeout(function() {
+          aEl.classList.remove('hidden');
+          hEl.classList.remove('hidden');
+        }, 100);
+
+        setTimeout(dancingLights(), 6000);
+
       } else {
         document.querySelector('article')
           .innerHTML = 'The YQL server returned an error';

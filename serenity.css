@@ -1,7 +1,8 @@
 * {
   color: #333;
   font-family: Arial,Helvetica,sans-serif;
-  transition: color 6s ease;
+  opacity: 1;
+  transition: all 6s ease;
 }
 
 html,
@@ -16,11 +17,6 @@ body {
   position: absolute;
   top: 0;
   width: 100%;
-}
-
-.highlight {
-  color: #d83;
-  transition: color 2s ease;
 }
 
 section {
@@ -43,4 +39,13 @@ a {
   display: block;
   text-align: right;
   text-decoration: none;
+}
+
+.highlight {
+  color: #d83;
+  transition: color 2s ease;
+}
+
+.hidden {
+  opacity: 0;
 }
