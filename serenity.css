@@ -1,0 +1,46 @@
+* {
+  color: #333;
+  font-family: Arial,Helvetica,sans-serif;
+  transition: color 6s ease;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  bottom: 0;
+  display: table;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.highlight {
+  color: #d83;
+  transition: color 2s ease;
+}
+
+section {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+article {
+  display: inline-block;
+  max-width: 60em;
+}
+
+h1 {
+  display: inline-block;
+  font-size: 66.6px;
+}
+
+a {
+  display: block;
+  text-align: right;
+  text-decoration: none;
+}
