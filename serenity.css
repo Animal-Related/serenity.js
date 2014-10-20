@@ -2,7 +2,7 @@
   color: #333;
   font-family: Arial,Helvetica,sans-serif;
   opacity: 1;
-  transition: all 6s ease;
+  transition: color 6s ease, opacity 4s ease;
 }
 
 html,
