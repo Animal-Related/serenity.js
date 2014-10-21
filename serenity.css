@@ -27,7 +27,8 @@ section {
 
 article {
   display: inline-block;
-  max-width: 60em;
+  max-width: 900px;
+  padding: 1em;
 }
 
 h1 {
